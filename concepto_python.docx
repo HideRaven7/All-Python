@@ -1,0 +1,127 @@
+Fundamentales de Python
+Sintaxis Básica
+
+Variables, tipos de datos (int, float, str, bool, etc.).
+Operadores (+, -, *, /, %, ==, !=, etc.).
+Estructuras de control:
+Condicionales: if, else, elif.
+Bucles: for, while.
+break, continue.
+Estructuras de Datos
+
+Listas: Creación, acceso, modificación, eliminación.
+Tuplas: Inmutabilidad, acceso y uso.
+Diccionarios: Claves y valores, acceso, eliminación.
+Conjuntos: Uso básico, operaciones (unión, intersección, diferencia).
+Funciones
+
+Definición de funciones: def nombre_funcion().
+Parámetros y argumentos.
+Funciones lambda (funciones anónimas).
+Conceptos de return.
+Manejo de Archivos
+
+Leer y escribir archivos (open(), read(), write(), close()).
+Uso de with para manejar archivos de manera eficiente.
+Manejo de Errores
+
+Uso de try, except, else, finally.
+Manejo de excepciones personalizadas con raise.
+Comprehensions
+
+List comprehensions: [x for x in iterable].
+Dictionary comprehensions: {key: value for key, value in iterable}.
+Set comprehensions.
+Conceptos Avanzados en Python
+Orientación a Objetos (OOP)
+
+Clases y objetos.
+Atributos y métodos.
+Herencia y polimorfismo.
+Encapsulamiento y abstracción.
+Métodos especiales (__init__, __str__, __repr__).
+Funciones Avanzadas
+
+Funciones recursivas.
+Decoradores.
+Generadores: yield, next().
+Funciones de orden superior: map(), filter(), reduce().
+Módulos y Paquetes
+
+Importación de módulos y paquetes.
+Creación de módulos personalizados.
+Uso de bibliotecas estándar (como math, datetime, os, etc.).
+Programación Funcional
+
+Mapas, filtros y reducciones.
+Funciones puras y efectos secundarios.
+Uso de lambda, filter(), map(), reduce().
+Estructuras de Datos Avanzadas
+Colecciones Especializadas
+
+namedtuple, deque, defaultdict, Counter, OrderedDict de la librería collections.
+Uso de heapq para montículos y pilas.
+Manejo de datos con itertools.
+Algoritmos y Complejidad
+
+Análisis de complejidad (tiempo y espacio).
+Implementación de algoritmos de búsqueda y ordenación (búsqueda binaria, quicksort, mergesort).
+Estructuras de datos como pilas, colas, listas enlazadas.
+Manejo de Datos y Librerías
+Bases de Datos
+
+Conexión a bases de datos SQL (MySQL, PostgreSQL) y NoSQL (MongoDB).
+CRUD (Crear, Leer, Actualizar, Eliminar) con bases de datos.
+ORM (Object Relational Mapping) con SQLAlchemy.
+Automatización de Tareas
+
+Uso de bibliotecas como os, shutil y subprocess para automatizar tareas de archivos y procesos.
+Scraping web con BeautifulSoup, requests.
+Pruebas (Testing)
+
+Pruebas unitarias con unittest o pytest.
+Creación de mock objects y pruebas de integración.
+Desarrollo Web con Python (Flask/Django)
+Flask
+
+Rutas y manejo de solicitudes HTTP.
+Plantillas Jinja2.
+Manejo de formularios y validación.
+Autenticación y manejo de sesiones.
+Conexión a bases de datos con SQLAlchemy.
+Django
+
+Diferencias con Flask (estructura más robusta).
+Configuración de proyectos Django, modelos, vistas, y controladores (MVC).
+Formularios, validaciones y administración.
+Desarrollo de API's y RESTful
+RESTful APIs
+
+Diseño de APIs RESTful con Flask/Django.
+Manejo de solicitudes y respuestas en JSON.
+Autenticación de usuarios con JWT (JSON Web Tokens).
+Conexión con Servicios Externos
+
+Consumo de APIs externas con requests.
+Uso de Webhooks.
+Herramientas y Buenas Prácticas
+Control de Versiones
+
+Uso de Git y GitHub para el control de versiones.
+Ramas, commits, merge, pull requests.
+Entornos Virtuales
+
+Creación de entornos virtuales con venv o virtualenv.
+Gestión de dependencias con pip y requirements.txt.
+Documentación
+
+Creación de documentación usando docstrings y herramientas como Sphinx.
+Práctica y Proyectos
+Desarrollo de Proyectos
+Aplicar lo aprendido en proyectos reales como:
+Gestor de Tareas.
+Blog personal.
+Aplicación de Notas.
+API RESTful.
+Scraper de Web.
+Aplicación de Finanzas personales.

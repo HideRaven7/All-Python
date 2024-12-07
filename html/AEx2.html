@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación de Algoritmos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #0056b3;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        code {
+            color: #d63384;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .example {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Explicación de Algoritmos - Línea por Línea</h1>
+
+        <!-- Algoritmo 1: Búsqueda Binaria -->
+        <div class="section">
+            <h2>1. Búsqueda Binaria</h2>
+            <p><strong>Descripción:</strong> La búsqueda binaria es un algoritmo eficiente para encontrar un valor en
+                una lista ordenada.</p>
+            <pre><code>def busqueda_binaria(arr, x):
+    inicio, fin = 0, len(arr) - 1  # Inicializa los índices de inicio y fin para la búsqueda
+    while inicio <= fin:  # Mientras el rango de búsqueda sea válido
+        medio = (inicio + fin) // 2  # Calcula el índice medio
+        if arr[medio] == x:  # Si el elemento en el medio es el que buscamos
+            return medio  # Retorna la posición del elemento encontrado
+        elif arr[medio] < x:  # Si el valor en el medio es menor que el valor a buscar
+            inicio = medio + 1  # Cambia el índice de inicio al siguiente al medio
+        else:  # Si el valor en el medio es mayor que el valor a buscar
+            fin = medio - 1  # Cambia el índice de fin al anterior al medio
+    return -1  # Si no se encuentra el valor, retorna -1</code></pre>
+            <h3>Explicación línea por línea:</h3>
+            <ul>
+                <li><strong>inicio, fin = 0, len(arr) - 1</strong>: Se inicializan los índices de inicio y fin para el
+                    rango de búsqueda.</li>
+                <li><strong>medio = (inicio + fin) // 2</strong>: Se calcula el índice medio de la lista.</li>
+                <li><strong>arr[medio] == x</strong>: Se compara el valor en el medio con el valor a buscar.</li>
+                <li><strong>inicio = medio + 1</strong> y <strong>fin = medio - 1</strong>: Si el valor a buscar no está
+                    en el medio, se ajustan los límites de búsqueda para continuar buscando en la mitad correspondiente.
+                </li>
+                <li><strong>return -1</strong>: Si no se encuentra el valor, se retorna -1 indicando que el valor no
+                    está en la lista.</li>
+            </ul>
+        </div>
+
+        <!-- Algoritmo 2: QuickSort -->
+        <div class="section">
+            <h2>2. QuickSort</h2>
+            <p><strong>Descripción:</strong> QuickSort es un algoritmo de ordenación que utiliza la técnica de "divide y
+                vencerás".</p>
+            <pre><code>def quicksort(arr):
+    if len(arr) <= 1:  # Si la lista tiene 0 o 1 elementos, ya está ordenada
+        return arr  # Devuelve la lista tal como está
+    pivote = arr[len(arr) // 2]  # Selecciona el elemento del medio como pivote
+    izquierda = [x for x in arr if x < pivote]  # Sublista de elementos menores que el pivote
+    centro = [x for x in arr if x == pivote]  # Sublista de elementos iguales al pivote
+    derecha = [x for x in arr if x > pivote]  # Sublista de elementos mayores que el pivote
+    return quicksort(izquierda) + centro + quicksort(derecha)  # Recursivamente ordena y concatena las sublistas</code></pre>
+            <h3>Explicación línea por línea:</h3>
+            <ul>
+                <li><strong>if len(arr) <= 1:</strong> Si la lista tiene un solo elemento o está vacía, no necesita
+                            ordenarse.</li>
+                <li><strong>pivote = arr[len(arr) // 2]</strong>: Se selecciona el pivote como el elemento medio de la
+                    lista.</li>
+                <li><strong>izquierda, centro, derecha:</strong> Se crean tres sublistas: una con los elementos menores,
+                    otra con los elementos iguales y otra con los elementos mayores que el pivote.</li>
+                <li><strong>quicksort(izquierda) + centro + quicksort(derecha):</strong> Recursivamente ordena las
+                    sublistas y las concatena.</li>
+            </ul>
+        </div>
+
+        <!-- Algoritmo 3: BFS (Breadth-First Search) -->
+        <div class="section">
+            <h2>3. BFS (Breadth-First Search)</h2>
+            <p><strong>Descripción:</strong> BFS es un algoritmo de búsqueda que explora los nodos de un grafo nivel por
+                nivel.</p>
+            <pre><code>from collections import deque  # Importa deque para una cola eficiente
+
+def bfs(grafo, inicio):
+    visitados = set()  # Un conjunto para llevar el seguimiento de los nodos visitados
+    cola = deque([inicio])  # Cola de nodos por visitar, comenzando con el nodo inicial
+    while cola:  # Mientras haya nodos en la cola
+        nodo = cola.popleft()  # Extrae el primer nodo de la cola
+        if nodo not in visitados:  # Si el nodo no ha sido visitado
+            visitados.add(nodo)  # Marca el nodo como visitado
+            cola.extend(grafo[nodo] - visitados)  # Añade los vecinos no visitados a la cola
+    return visitados  # Retorna el conjunto de nodos visitados</code></pre>
+            <h3>Explicación línea por línea:</h3>
+            <ul>
+                <li><strong>deque([inicio])</strong>: Se utiliza una cola para almacenar los nodos que se van a visitar.
+                </li>
+                <li><strong>cola.popleft()</strong>: Extrae el primer nodo de la cola para procesarlo.</li>
+                <li><strong>cola.extend(grafo[nodo] - visitados)</strong>: Añade los nodos vecinos del nodo actual a la
+                    cola, si no han sido visitados.</li>
+                <li><strong>return visitados</strong>: Devuelve el conjunto de nodos que han sido visitados.</li>
+            </ul>
+        </div>
+
+        <!-- Algoritmo 4: Dijkstra -->
+        <div class="section">
+            <h2>4. Dijkstra</h2>
+            <p><strong>Descripción:</strong> Dijkstra es un algoritmo de búsqueda de caminos más cortos en un grafo
+                ponderado.</p>
+            <pre><code>import heapq  # Importa el módulo para usar la cola de prioridad (heap)
+
+def dijkstra(grafo, inicio):
+    distancias = {nodo: float('infinity') for nodo in grafo}  # Inicializa las distancias a infinito
+    distancias[inicio] = 0  # La distancia al nodo inicial es 0
+    prioridad = [(0, inicio)]  # Cola de prioridad que guarda pares (distancia, nodo)
+
+    while prioridad:  # Mientras haya nodos en la cola de prioridad
+        distancia_actual, nodo_actual = heapq.heappop(prioridad)  # Extrae el nodo con la menor distancia
+        for vecino, peso in grafo[nodo_actual].items():  # Para cada vecino del nodo actual
+            distancia = distancia_actual + peso  # Calcula la nueva distancia al vecino
+            if distancia < distancias[vecino]:  # Si la nueva distancia es menor
+                distancias[vecino] = distancia  # Actualiza la distancia al vecino
+                heapq.heappush(prioridad, (distancia, vecino))  # Añade el vecino a la cola
+    return distancias  # Devuelve las distancias mínimas desde el nodo inicial</code></pre>
+            <h3>Explicación línea por línea:</h3>
+            <ul>
+                <li><strong>distancias = {nodo: float('infinity') for nodo in grafo}</strong>: Inicializa todas las
+                    distancias a infinito.</li>
+                <li><strong>heapq.heappop(prioridad)</strong>: Extrae el nodo con la menor distancia de la cola de
+                    prioridad.</li>
+                <li><strong>heapq.heappush(prioridad, (distancia, vecino))</strong>: Añade un nodo a la cola de
+                    prioridad con su distancia actualizada.</li>
+            </ul>
+        </div>
+
+        <!-- Algoritmo 5: Knapsack Problem -->
+        <div class="section">
+            <h2>5. Knapsack Problem</h2>
+            <p><strong>Descripción:</strong> El problema de la mochila busca maximizar el valor de los elementos
+                seleccionados sin exceder la capacidad de la mochila.</p>
+            <pre><code>def knapsack(weights, values, capacity):
+    n = len(weights)  # Número de elementos en la mochila
+    dp = [[0] * (capacity + 1) for _ in range(n + 1)]  # Tabla para almacenar soluciones parciales
+
+    for i in range(n + 1):  # Recorre todos los elementos
+        for w in range(capacity + 1):  # Recorre todas las capacidades posibles
+            if i == 0 or w == 0:  # Si no hay elementos o la capacidad es 0
+                dp[i][w] = 0  # El valor máximo es 0
+            elif weights[i - 1] <= w:  # Si el peso del elemento cabe en la mochila
+                dp[i][w] = max(values[i - 1] + dp[i - 1][w - weights[i - 1]], dp[i - 1][w])
+                # Maximaliza el valor de llevar o no llevar el elemento
+            else:
+                dp[i][w] = dp[i - 1][w]  # Si no cabe, se conserva el valor sin el elemento
+    return dp[n][capacity]  # Retorna el valor máximo alcanzable con la capacidad dada</code></pre>
+            <h3>Explicación línea por línea:</h3>
+            <ul>
+                <li><strong>dp[i][w]</strong>: Almacena el valor máximo alcanzable considerando los primeros `i`
+                    elementos y una capacidad `w`.</li>
+                <li><strong>max(values[i - 1] + dp[i - 1][w - weights[i - 1]], dp[i - 1][w])</strong>: Decide si incluir
+                    o no el elemento `i`.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

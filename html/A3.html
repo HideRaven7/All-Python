@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa de Algoritmos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #0056b3;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        code {
+            color: #d63384;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .example {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Guía Completa de Algoritmos</h1>
+        <p>Esta guía contiene explicaciones detalladas y ejemplos prácticos de todos los algoritmos esenciales para
+            backend y desarrollo general.</p>
+
+        <!-- Algoritmo 6: Hashing eficiente -->
+        <div class="section">
+            <h2>6. Hashing Eficiente</h2>
+            <p><strong>Descripción:</strong> Utilizado en estructuras de datos como tablas hash para un acceso rápido a
+                los elementos.</p>
+            <div class="example">
+                <h3>Ejemplo en Python</h3>
+                <pre><code>hash_table = {}
+hash_table["clave1"] = "valor1"
+hash_table["clave2"] = "valor2"
+print(hash_table["clave1"])  # Salida: "valor1"</code></pre>
+            </div>
+        </div>
+
+        <!-- Algoritmo 7: Union-Find -->
+        <div class="section">
+            <h2>7. Union-Find (Disjoint Set)</h2>
+            <p><strong>Descripción:</strong> Maneja relaciones de conjunto disjunto en problemas como la detección de
+                ciclos o la unión de componentes.</p>
+            <div class="example">
+                <h3>Ejemplo en Python</h3>
+                <pre><code>class UnionFind:
+    def __init__(self, n):
+        self.parent = list(range(n))
+    
+    def find(self, x):
+        if self.parent[x] != x:
+            self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+    
+    def union(self, x, y):
+        rootX = self.find(x)
+        rootY = self.find(y)
+        if rootX != rootY:
+            self.parent[rootX] = rootY
+
+# Ejemplo
+uf = UnionFind(5)
+uf.union(0, 1)
+uf.union(1, 2)
+print(uf.find(0))  # Salida: 2</code></pre>
+            </div>
+        </div>
+
+        <!-- Algoritmo 8: Merge Sort -->
+        <div class="section">
+            <h2>8. Merge Sort</h2>
+            <p><strong>Descripción:</strong> Un algoritmo de ordenación que divide la lista en sublistas más pequeñas y
+                luego las fusiona de manera ordenada.</p>
+            <div class="example">
+                <h3>Ejemplo en Python</h3>
+                <pre><code>def mergesort(arr):
+    if len(arr) <= 1:
+        return arr
+    medio = len(arr) // 2
+    izquierda = mergesort(arr[:medio])
+    derecha = mergesort(arr[medio:])
+    return merge(izquierda, derecha)
+
+def merge(izquierda, derecha):
+    resultado = []
+    while izquierda and derecha:
+        if izquierda[0] < derecha[0]:
+            resultado.append(izquierda.pop(0))
+        else:
+            resultado.append(derecha.pop(0))
+    resultado.extend(izquierda)
+    resultado.extend(derecha)
+    return resultado
+
+# Ejemplo
+lista = [12, 11, 13, 5, 6, 7]
+print(mergesort(lista))  # Salida: [5, 6, 7, 11, 12, 13]</code></pre>
+            </div>
+        </div>
+
+        <!-- Algoritmo 9: Fibonacci -->
+        <div class="section">
+            <h2>9. Secuencia de Fibonacci</h2>
+            <p><strong>Descripción:</strong> La secuencia de Fibonacci es una sucesión en la que cada número es la suma
+                de los dos anteriores.</p>
+            <div class="example">
+                <h3>Ejemplo en Python</h3>
+                <pre><code>def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+# Ejemplo
+print(fibonacci(10))  # Salida: 55</code></pre>
+            </div>
+        </div>
+
+        <!-- Algoritmo 10: Algoritmo de Euclides -->
+        <div class="section">
+            <h2>10. Algoritmo de Euclides</h2>
+            <p><strong>Descripción:</strong> Un algoritmo para encontrar el máximo común divisor (MCD) de dos números.
+            </p>
+            <div class="example">
+                <h3>Ejemplo en Python</h3>
+                <pre><code>def euclides(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+# Ejemplo
+print(euclides(56, 98))  # Salida: 14</code></pre>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
